@@ -1,6 +1,6 @@
 # react-native-tink-link
 
-This library wraps Tink Link and exposes its functionality as React Native function.
+This library wraps Tink Link and exposes its functionality as React Native function and returns an authorization code.
 
 ## Installation
 
@@ -11,11 +11,9 @@ npm install react-native-tink-link
 ## Usage
 
 ```js
-import { multiply } from "react-native-tink-link";
+import { showTinkLink } from 'react-native-tink-link';
 
-// ...
-
-const result = await multiply(3, 7);
+const authorizationCode = await showTinkLink();
 ```
 
 ## Contributing
