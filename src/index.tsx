@@ -20,3 +20,7 @@ const TinkLink = NativeModules.TinkLink
 export function multiply(a: number, b: number): Promise<number> {
   return TinkLink.multiply(a, b);
 }
+
+export function displayTinkLink(a: string, b: string): Promise<string> {
+  return TinkLink.displayTinkLink(a, b);
+}

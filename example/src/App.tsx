@@ -1,13 +1,14 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-tink-link';
+import { multiply, displayTinkLink } from 'react-native-tink-link';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result, setResult] = useState<number | undefined>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     multiply(3, 7).then(setResult);
+    displayTinkLink('123', '456').then((response) => console.log(response));
   }, []);
 
   return (
