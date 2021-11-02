@@ -20,5 +20,10 @@ class TinkLinkModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
     
     }
 
+    @ReactMethod
+    fun displayTinkLink(a: String, b: String, promise: Promise) {
+      promise.resolve(a + b)
+    }
+
     
 }
