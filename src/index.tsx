@@ -1,4 +1,5 @@
 import { NativeModules, Platform } from 'react-native';
+import { getTinkAccessToken, getTinkAccounts } from '../utils/fetch';
 
 const LINKING_ERROR =
   `The package 'react-native-tink-link' doesn't seem to be linked. Make sure: \n\n` +
@@ -23,4 +24,20 @@ export function multiply(a: number, b: number): Promise<number> {
 
 export function displayTinkLink(a: string, b: string): Promise<string> {
   return TinkLink.displayTinkLink(a, b);
+}
+
+export function fetchTinkAccessToken(
+  TINK_CLIENT_ID: String,
+  TINK_CLIENT_SECRET: String,
+  authorizationCode: String
+) {
+  return getTinkAccessToken(
+    TINK_CLIENT_ID,
+    TINK_CLIENT_SECRET,
+    authorizationCode
+  );
+}
+
+export function fetchTinkAccounts(accessToken: String) {
+  return getTinkAccounts(accessToken);
 }
