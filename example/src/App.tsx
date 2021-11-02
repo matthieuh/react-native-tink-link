@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
 import { multiply, displayTinkLink } from 'react-native-tink-link';
 
 export default function App() {
@@ -8,12 +8,19 @@ export default function App() {
 
   useEffect(() => {
     multiply(3, 7).then(setResult);
-    displayTinkLink('123', '456').then((response) => console.log(response));
   }, []);
 
   return (
     <View style={styles.container}>
       <Text>Result: {result}</Text>
+      <Button
+        title={'Display Tink Link'}
+        onPress={() =>
+          displayTinkLink('123', '456').then((response) =>
+            console.log(response)
+          )
+        }
+      />
     </View>
   );
 }
